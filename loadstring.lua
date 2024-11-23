@@ -5,4 +5,4 @@
 > github: https://github.com/VANKApidarnoi/sukapidorpidoras/
 > report bugs on github ^ or vanya_zabivnoy666 (discord)
 -----------------------------------------------------------]]--
-loadstring(game:HttpGet('https://pastebin.com/raw/c8GpftBQ'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/vmain.lua'))()
