@@ -6,7 +6,7 @@
 -->> github: https://github.com/VANKApidarnoi/sukapidorpidoras/ <<------------------------------------------------------------\
 -->> report bugs / kicks on github ^ or vanya_zabivnoy666 (discord) <<---------------------------------------------------------\
 -->> releases: https://github.com/VANKApidarnoi/sukapidorpidoras/releases <<----------------------------------------------------\
--->> ping can affect your farming speed <<---------------------------------------------------------------------------------------\
+-->> ping / lags can affect your farming speed or freeze it for some time <<-----------------------------------------------------\
 --]]--[[----------------------------------------------------------------------------------------------------------------------]]--\
 --[[--]]loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/vmain.lua'))()---|
 --]]--[[----------------------------------------------------------------------------------------------------------------------]]--/
