@@ -7,7 +7,7 @@
 -->> report bugs / kicks on github ^ or vanya_zabivnoy666 (discord) <<--------------------------------------------------------\
 -->> releases: https://github.com/VANKApidarnoi/sukapidorpidoras/releases <<---------------------------------------------------\
 -->> ping / lags / rdp / other shitty things can affect your farming speed or freeze it for some time or forever <<-------------\
--->> ^ cant be fixed on script side ^ <<-----------------------------------------------------------------------------------------\
+-->> ^ cant be fixed on script side ^ u have this problem if your farm and console freezes without error ^ <<--------------------\
 --]]--[[----------------------------------------------------------------------------------------------------------------------]]--\
 --[[--]]loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/vmain.lua'))()---|
 --]]--[[----------------------------------------------------------------------------------------------------------------------]]--/
