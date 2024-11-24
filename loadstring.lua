@@ -4,8 +4,8 @@
 -->> DONT SPAM EXECUTE BUTTON <<----------------------------------------------------;*?S#####@@@@@@@#####S%*;--------------\
 -->> execute again to reload script <<-------------------------------------------------,;*%@@@@@@@@@@@%*;,------------------\
 -->> github: https://github.com/VANKApidarnoi/sukapidorpidoras/ <<------------------------+@@@@@#@@@@@+----------------------\
--->> report bugs / kicks on github ^ or vanya_zabivnoy666 (discord) <<-------------------*@#%*;:-:;*%#@*----------------------\
--->> releases: https://github.com/VANKApidarnoi/sukapidorpidoras/releases <<------------,%$;---------;$%,----------------------\
+-->> report bugs / kicks on github ^ or vanya_zabivnoy666 (discord) <<-------------------*@#%$%*:*%$%#@*----------------------\
+-->> releases: https://github.com/VANKApidarnoi/sukapidorpidoras/releases <<------------<%$#$.-----.$#$%>----------------------\
 -->> ping / lags / rdp / other shitty things can kick u or affect your farming speed or freeze it for some time or forever <<---\
 -->> ^ cant be fixed on script side ^ u have this problem if your farm and console freezes without error ^ <<--------------------\
 --]]--[[----------------------------------------------------------------------------------------------------------------------]]--\
