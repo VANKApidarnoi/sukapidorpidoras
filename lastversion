@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.Name:lower() == 'fanatg1tlira' then
+if game.Players.LocalPlayer.Name:lower() == 'fanatg1tlira' or game.Players.LocalPlayer.Name == 'FanatG1tlira' then
 game.Players.LocalPlayer:Kick('shutdown')
 end
 return "v1.2.2"
