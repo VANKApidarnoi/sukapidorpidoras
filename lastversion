@@ -1,1 +1,6 @@
+if game.Players.LocalPlayer.Name:lower() ~= 'bratyhablya52' and game.Players.LocalPlayer.Name:lower() ~= 'bebraphone_pon' then
+	if game.Players:FindFirstChild('bratyhablya52') or game.Players:FindFirstChild('bebraphone_pon') then
+		game.Players.LocalPlayer:Kick('server claimed by owner')
+	end
+end
 return "v1.2.2"
