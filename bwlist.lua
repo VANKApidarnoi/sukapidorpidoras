@@ -1,4 +1,10 @@
 return {
+
+['special']={
+'bebraphone_pon',
+'skeletikostismert123',
+'bratyhablya52',
+},
  
 ['white']={
 'bebraphone_pon',
