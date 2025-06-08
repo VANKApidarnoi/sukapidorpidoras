@@ -178,7 +178,7 @@ local function coins()
     return game.Players.LocalPlayer.Coins.Value
 end
 
-local buy_things_allowed = false
+local buy_things_allowed = true
 
 --local plan = {
     --[1] = {Name = 'Soldier', Price = 400};
@@ -1129,7 +1129,7 @@ end
 for i,v in pairs(plan) do
     print('plan: ',v.Namerakdot)
 end
-local buy_things_allowed = false
+local buy_things_allowed = true
 local function coins()
     return game.Players.LocalPlayer.Coins.Value
 end
