@@ -1,7 +1,4 @@
-
--- put script into <workspace>\rakdot\script.lua and execute:
--- loadstring(readfile('rakdot\\rakdot.lua'))()
-
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oij"))()
 task.wait(math.random(2,11)/10)
 if not getgenv().rakdotloaded then
     getgenv().rakdotloaded = true
@@ -63,17 +60,49 @@ end]]
 
 wait(7)
 function loadscript_amp()
-local lvl = game.Players.LocalPlayer:WaitForChild('Level')
+
+local lvl0 = game.Players.LocalPlayer:WaitForChild('Level')
 warn('KEE 1')
-if not lvl then
+if not lvl0 then
     wait(3)
-    lvl = game.Players.LocalPlayer:FindFirstChild('Level')
-    if not lvl then
+    lvl0 = game.Players.LocalPlayer:FindFirstChild('Level')
+    if not lvl0 then
         while wait(3) do
             que() game:GetService("TeleportService"):Teleport(3260590327)
         end
     end
 end
+
+local exp = game.Players.LocalPlayer:FindFirstChild('Experience')
+if not exp then
+    wait(3)
+    exp = game.Players.LocalPlayer:FindFirstChild('Experience')
+    if not exp then
+        while wait(3) do
+            que() game:GetService("TeleportService"):Teleport(3260590327)
+        end
+    end
+end
+
+local function CalculateNewLevel(currentLevel, currentExp)
+    local level = currentLevel
+    local exp = currentExp
+
+    local function ExpToNext(level)
+        return 45 + level * 3.5
+    end
+
+    while exp >= ExpToNext(level) do
+        local needed = ExpToNext(level)
+        exp = exp - needed
+        level = level + 1
+    end
+
+    return level--, exp
+end
+
+local lvl = CalculateNewLevel(lvl0.Value, exp.Value)
+
 warn('KEE 2')
 local towers = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
 local totowers42 = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/roblox%20tds%20cliff%20towers'))()
@@ -178,7 +207,7 @@ local function coins()
     return game.Players.LocalPlayer.Coins.Value
 end
 
-local buy_things_allowed = true
+local buy_things_allowed = false
 
 --local plan = {
     --[1] = {Name = 'Soldier', Price = 400};
@@ -1129,7 +1158,7 @@ end
 for i,v in pairs(plan) do
     print('plan: ',v.Namerakdot)
 end
-local buy_things_allowed = true
+local buy_things_allowed = false
 local function coins()
     return game.Players.LocalPlayer.Coins.Value
 end
@@ -1694,6 +1723,8 @@ else
     loadscript_amp()
    end
 end
+
+
 
 end)
 if not sucka then
