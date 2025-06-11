@@ -73,35 +73,7 @@ if not lvl0 then
     end
 end
 
-local exp = game.Players.LocalPlayer:FindFirstChild('Experience')
-if not exp then
-    wait(3)
-    exp = game.Players.LocalPlayer:FindFirstChild('Experience')
-    if not exp then
-        while wait(3) do
-            que() game:GetService("TeleportService"):Teleport(3260590327)
-        end
-    end
-end
-
-local function CalculateNewLevel(currentLevel, currentExp)
-    local level = currentLevel
-    local exp = currentExp
-
-    local function ExpToNext(level)
-        return 45 + level * 3.5
-    end
-
-    while exp >= ExpToNext(level) do
-        local needed = ExpToNext(level)
-        exp = exp - needed
-        level = level + 1
-    end
-
-    return level--, exp
-end
-
-local lvl = CalculateNewLevel(lvl0.Value, exp.Value)
+local lvl = lvl0
 
 warn('KEE 2')
 local towers = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
@@ -1452,24 +1424,56 @@ Balance: ]]..cv..'$','yellow')
     writefile('rakdot\\'..lp..'\\balance.rakdot',tostring(cv))
 
     -- Level tracking
-    local lvl = game.Players.LocalPlayer:WaitForChild('Level')
-    if not lvl then
+    
+    local lvl0 = game.Players.LocalPlayer:WaitForChild('Level')
+    if not lvl0 then
         wait(3)
-        lvl = game.Players.LocalPlayer:FindFirstChild('Level')
-        if not lvl then
+        lvl0 = game.Players.LocalPlayer:FindFirstChild('Level')
+        if not lvl0 then
             while wait(3) do
                 que() game:GetService("TeleportService"):Teleport(3260590327)
             end
         end
     end
+
+    local exp = game.Players.LocalPlayer:FindFirstChild('Experience')
+    if not exp then
+        wait(3)
+        exp = game.Players.LocalPlayer:FindFirstChild('Experience')
+        if not exp then
+            while wait(3) do
+                que() game:GetService("TeleportService"):Teleport(3260590327)
+            end
+        end
+    end
+
+    local function CalculateNewLevel(currentLevel, currentExp)
+        local level = currentLevel
+        local exp = currentExp
+
+        local function ExpToNext(level)
+            return 45 + level * 3.5
+        end
+
+        while exp >= ExpToNext(level) do
+            local needed = ExpToNext(level)
+            exp = exp - needed
+            level = level + 1
+        end
+
+        return level--, exp
+    end
+
+    local lvl = CalculateNewLevel(lvl0.Value, exp.Value)
+
     local lvlbef
     if isfile('rakdot\\'..lp..'\\level.rakdot') then
         lvlbef = tonumber(readfile('rakdot\\'..lp..'\\level.rakdot'))
     end
-    local lvlcv = lvl.Value
+    local lvlcv = lvl0.Value
     if lvlbef then
-        if lvlcv ~= lvlbef then
-            webhook:send('Level increased: '..lvlcv,'blue')
+        if (lvlcv ~= lvlbef) or (lvl ~= lvlbef) then
+            webhook:send('Level increased: orig:'..lvlcv..' calc:'..lvl,'blue')
         end
     end
     writefile('rakdot\\'..lp..'\\level.rakdot',tostring(lvlcv))
