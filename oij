@@ -1470,10 +1470,12 @@ Balance: ]]..cv..'$','yellow')
     if isfile('rakdot\\'..lp..'\\level.rakdot') then
         lvlbef = tonumber(readfile('rakdot\\'..lp..'\\level.rakdot'))
     end
-    local lvlcv = lvl0.Value
+    
+    local lvlcv = lvl
+
     if lvlbef then
-        if (lvlcv ~= lvlbef) or (lvl ~= lvlbef) then
-            webhook:send('Level increased: orig:'..lvlcv..' calc:'..lvl,'blue')
+        if lvlcv ~= lvlbef then
+            webhook:send('Level increased: '..lvlcv,'blue')
         end
     end
     writefile('rakdot\\'..lp..'\\level.rakdot',tostring(lvlcv))
