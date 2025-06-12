@@ -1563,7 +1563,7 @@ spawn(function() -- auto reconect
         last_contact = tick() end
     end)
     while wait(1) do
-        if tick()-last_contact > 20 then
+        if tick()-last_contact > 30 then
             if not kickwebhooked then
                 kickwebhooked = true
                 webhook:send('Disconnected','red')
@@ -1571,7 +1571,7 @@ spawn(function() -- auto reconect
             warn('No connection, auto rejoining when its possible')
             que() game:GetService("TeleportService"):Teleport(3260590327)
             else
-            if tick()-last_contact < 6 then
+            if tick()-last_contact < 10 then
                 --print('Connection is okay!')
             else
                 warn('Connection is not detected last time')
