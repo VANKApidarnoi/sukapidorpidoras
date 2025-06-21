@@ -1345,7 +1345,7 @@ makefolder('rakdot')
 local lp = game.Players.LocalPlayer.Name
 makefolder('rakdot\\'..lp)
 
-writefile('rakdot\\webhook.txt',[[https://discord.com/api/webhooks/1381279378964480110/ekt0R5wry05THV1-jxPdRJRnPS-kM7WwiDj2PpDxWGWGvGm2M0ZKXB4VI4fk08ql5G8l]])
+writefile('rakdot\\webhook.txt',[[https://discord.com/api/webhooks/1385801247310872616/yGHP7VabUkK4_sqlxkE-LkIK1e1m7qtThBIdZABo_Tks8v5TxsOK9jcJbp80SvuWOcmI]])
 if isfile('rakdot\\webhook.txt') then
     getgenv().rakdot_WebhookUrl = tostring(readfile('rakdot\\webhook.txt'))
     webhook={}
