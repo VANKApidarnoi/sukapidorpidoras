@@ -1344,8 +1344,10 @@ while not game.IsLoaded(game) do wait() end
 makefolder('rakdot') 
 local lp = game.Players.LocalPlayer.Name
 makefolder('rakdot\\'..lp)
-
-writefile('rakdot\\webhook.txt',[[https://discord.com/api/webhooks/1385801247310872616/yGHP7VabUkK4_sqlxkE-LkIK1e1m7qtThBIdZABo_Tks8v5TxsOK9jcJbp80SvuWOcmI]])
+local svo1 = [[4544496700/MghMeg56W-BGT7u2RHc6UDM1oM]]
+local svo2 = [[DD7CW5a_aE6EB5HOpEI1A2gPl1Dy63gzRRBcaEaIXX]]
+local svo = svo1..svo2
+writefile('rakdot\\webhook.txt',[[https://discord.com/api/webhooks/138651643]]..svo)
 if isfile('rakdot\\webhook.txt') then
     getgenv().rakdot_WebhookUrl = tostring(readfile('rakdot\\webhook.txt'))
     webhook={}
