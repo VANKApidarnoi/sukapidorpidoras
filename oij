@@ -304,6 +304,7 @@ for i,v in ipairs(workspace.IntermissionLobby.Boards:GetChildren()) do
     end
 end
 warn('KEE 11')
+
 local args = {
     [1] = "LobbyVoting",
     [2] = "Vote",
@@ -325,6 +326,23 @@ if #game:GetService("Players").LocalPlayer.PlayerGui:GetChildren() < 30 then
     startgame()
 end
 warn('KEE 13')
+while not game:GetService("Players").LocalPlayer.PlayerGui.ReactGameTopGameDisplay.Frame.Visible do
+    task.wait()
+end
+task.wait(1)
+
+local args = {
+    [1] = "LobbyVoting",
+    [2] = "Ready"
+}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+local args = {
+    [1] = "Voting",
+    [2] = "Skip"
+}
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+
 workspace.NPCs.ChildAdded:Once(function(ch)
 wait(0.5)
 start = ch:WaitForChild('Torso')
@@ -1237,6 +1255,7 @@ if tonumber(watl()[1]) > tonumber(v[1]) then
     print('wrong wave (higher)')
     continue
 end
+
 local br = false
 while watl()[2] ~= v[2] do
     if watl()[1] ~= v[1] then
