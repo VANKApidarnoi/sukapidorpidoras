@@ -1715,7 +1715,7 @@ if not sucka then
 local ran = math.random(1000000,9999999)
 if webhook then
 pcall(function()
-webhook:send('Error occured! file: error_log_'..ran)
+webhook:send('Error occured! file: error_log_'..ran..'\nContent: '..game:GetService("HttpService"):JSONEncode(reska))
 end)
 end
 local data = {error=reska}
