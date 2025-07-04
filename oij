@@ -1675,7 +1675,7 @@ makefolder('rakdot\\'..lp)
     que() game:GetService("TeleportService"):Teleport(3260590327)
 else
     wait(1)
-   if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Train') and #workspace.Map.Environment:FindFirstChild('Train'):GetChildren() == 6 then --nigger
+   if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Decorations') and workspace.Map.Environment.Decorations:FindFirstChild('Play machines') and workspace.Map.Environment.Decorations['Play machines']:FindFirstChild('Spin machine') then
     webhook:send('Loading ab','green')
     loadscript_ab()
    else
