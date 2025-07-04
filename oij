@@ -995,6 +995,7 @@ while task.wait(1) do
 end
 end
 function loadscript_ab()
+    local buy_things_allowed = false
 
 local lvl = game.Players.LocalPlayer:WaitForChild('Level')
 if not lvl then
@@ -1002,9 +1003,13 @@ if not lvl then
     lvl = game.Players.LocalPlayer:FindFirstChild('Level')
     if not lvl then
         while wait(3) do
-            que() game:GetService("TeleportService"):Teleport(3260590327)
+            game:GetService("TeleportService"):Teleport(3260590327)
         end
     end
+end
+
+local function coins()
+    return game.Players.LocalPlayer.Coins.Value
 end
 
 local towers = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
@@ -1014,6 +1019,7 @@ local plan = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApid
 spawn(function ()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/outdikk"))();
 end)
+if buy_things_allowed then
 for i,v in {plan,towers} do
     for tower,data in pairs(v) do
         local ct = totowers42[tower]
@@ -1043,8 +1049,11 @@ local not_owned_troops = {}
 game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild('Interface')
 wait(1)
 if not game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild('Interface') then
-    startgame()
+    local sterr = tick()
     while wait(3) do
+        if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild('Interface') then break end
+        if tick()-sterr > 17.5 then
+        game:GetService("TeleportService"):Teleport(3260590327) end
     end
 end wait(1)
 ke = false
@@ -1093,10 +1102,7 @@ end
 for i,v in pairs(plan) do
     print('plan: ',v.Namerakdot)
 end
-local buy_things_allowed = false
-local function coins()
-    return game.Players.LocalPlayer.Coins.Value
-end
+
 function checkplan()
     if buy_things_allowed then
         for i,v in pairs(plan) do
@@ -1126,7 +1132,7 @@ spawn(function()
     coroutine.close(co)
 end)
 
-
+end
 
 
 
@@ -1669,7 +1675,7 @@ makefolder('rakdot\\'..lp)
     que() game:GetService("TeleportService"):Teleport(3260590327)
 else
     wait(1)
-   if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Train') and #workspace.Map.Environment:FindFirstChild('Train'):GetChildren() == 6 then
+   if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Train') and #workspace.Map.Environment:FindFirstChild('Train'):GetChildren() == 6 then --nigger
     webhook:send('Loading ab','green')
     loadscript_ab()
    else
