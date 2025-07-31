@@ -7,7 +7,7 @@ return {
 },
  
 ['white']={
-'PjoterALT0',
+'pjoteralt0',
 'bebraphone_pon',
 'skeletikostismert123',
 'bratyhablya52',
