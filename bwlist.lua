@@ -7,7 +7,7 @@ return {
 },
  
 ['white']={
-game.Players.LocalPlayer.Name,
+'PjoterALT0',
 'bebraphone_pon',
 'skeletikostismert123',
 'bratyhablya52',
