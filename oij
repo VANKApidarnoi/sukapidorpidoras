@@ -714,7 +714,7 @@ function place(sekeps)
                         return
                     end
 
-                    if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameRewards.Frame.gameOver.Visible then
+                    if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
                         return
                     end
 
@@ -914,7 +914,7 @@ map = {
 coroutine.wrap(function()
     while wait(0.5) do
         
-        if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameRewards.Frame.gameOver.Visible then
+        if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
 
             if checkplan() then break end
 
@@ -960,21 +960,21 @@ while task.wait(1) do
     if minLevel == 999 then
         minLevel = 0
     end
-    if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameRewards.Frame.gameOver.Visible then
+    if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
         wait(4)
         startgame()
     end
     warn('tropps amount: ',trops_amount)
     warn('mapped: ',map[trops_amount])
     warn('minLevel: ',minLevel)
-    if trops_amount < 30 and not game:GetService("Players").LocalPlayer.PlayerGui.ReactGameRewards.Frame.gameOver.Visible then
+    if trops_amount < 30 and not game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
        
     local args = {
         [1] = "Voting",
         [2] = "Skip"
     }
     game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
-    elseif game:GetService("Players").LocalPlayer.PlayerGui.ReactGameRewards.Frame.gameOver.Visible then
+    elseif game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
         wait(4)
         startgame()
     end
@@ -1286,7 +1286,7 @@ end
 end)
 spawn(function()
     while task.wait() do
-        if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameRewards.Frame.gameOver.Visible then
+        if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
             task.wait(1)
             local args = {
                 [1] = "Multiplayer", 
