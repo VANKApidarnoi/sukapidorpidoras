@@ -22,7 +22,7 @@ wait(1)
 end
 
 function que()
-    while true do
+    --[[while true do
         task.wait(math.random(10,90)/100)
         if not isfile('rakdot\\que') then
             writefile('rakdot\\que',tostring(os.time()))
@@ -34,7 +34,7 @@ function que()
                 break
             end
         end
-    end
+    end]]
 end
 
 function SCRIPT()
