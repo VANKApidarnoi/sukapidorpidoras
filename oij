@@ -1456,9 +1456,13 @@ Balance: ]]..cv..'$','yellow')
 local G2L = {};
 
 -- StarterGui.ScreenGui
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui");
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
+spawn(function()
+	wait(10)
+	G2L["1"].Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+end)
 
 -- StarterGui.ScreenGui.Frame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
