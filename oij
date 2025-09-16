@@ -1175,7 +1175,7 @@ spawn(function ()
     while task.wait() do
 if bal() < balbef then
     bad = true
-    warn('BALANCE IF GOING DOWN')
+    warn('BALANCE IS GOING DOWN')
 else
     if not unbad then unbad = tick()
     else
@@ -1793,7 +1793,29 @@ makefolder('rakdot\\'..lp)
     webhook:send('Not teleported, trying to rejoin.','red')
     que() game:GetService("TeleportService"):Teleport(3260590327)
 else
-    wait(1)
+    wait(7)
+    spawn(function ()
+        task.wait(7)
+        while task.wait(7) do
+            if game:GetService("Players").LocalPlayer.PlayerGui.ReactOverridesVote.Frame.votes:FindFirstChild("container") then
+                yOff = game:GetService("Players").LocalPlayer.PlayerGui.ReactOverridesVote.Frame.votes.container.Position.Y.Offset
+                ySiz = game:GetService("Players").LocalPlayer.PlayerGui.ReactOverridesVote.Frame.votes.container.Position.Y.Scale
+                if ySiz < 0.1 and yOff < 0.1 then
+                    local args = {
+                        [1] = "LobbyVoting",
+                        [2] = "Ready"
+                    }
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+                    local args = {
+                        [1] = "Voting",
+                        [2] = "Skip"
+                    }
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+                end
+            end
+        end
+    end)
    if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Decorations') and workspace.Map.Environment.Decorations:FindFirstChild('Play machines') and workspace.Map.Environment.Decorations['Play machines']:FindFirstChild('Spin machine') then
     webhook:send('Loading ab','green')
     loadscript_ab()
