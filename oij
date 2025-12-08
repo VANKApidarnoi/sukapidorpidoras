@@ -1542,35 +1542,7 @@ local function format_number_with_dot(num)
     return left .. "." .. right
 end
 
-G2L["6"]["Text"] = [[Coins: ]]..format_number_with_dot(cv);
-
-    ---oiEND
-
-    if lvlbef then
-        if lvlcv ~= lvlbef then
-            webhook:send('Level increased: '..lvlcv,'blue')
-        end
-    end
-    writefile('rakdot\\'..lp..'\\level.rakdot',tostring(lvlcv))
-
-    if not isfile('rakdot\\accounts_info.json') then
-        writefile('rakdot\\accounts_info.json','{}') wait()
-    end
-
-    local aij = readfile('rakdot\\accounts_info.json')
-    local aij = game.HttpService:JSONDecode(aij)
-    if aij[lp] then
-        aij[lp]['Coins'] = cv
-        aij[lp]['Lvl'] = lvlcv
-    else
-        aij[lp] = {
-            Coins = cv;
-            Lvl = lvlcv;
-            Gems = -1;
-        }
-    end
-
-    function prete(jsonStr, tabWidth)
+function prete(jsonStr, tabWidth)
         local str = ""
         
         tabWidth = tabWidth or 4
@@ -1607,9 +1579,46 @@ G2L["6"]["Text"] = [[Coins: ]]..format_number_with_dot(cv);
         return str
     end
 
+G2L["6"]["Text"] = [[Coins: ]]..format_number_with_dot(cv);
+
+    ---oiEND
+
+    if lvlbef then
+        if lvlcv ~= lvlbef then
+            webhook:send('Level increased: '..lvlcv,'blue')
+        end
+    end
+    writefile('rakdot\\'..lp..'\\level.rakdot',tostring(lvlcv))
+
+    if not isfile('rakdot\\accounts_info.json') then
+        writefile('rakdot\\accounts_info.json','{}') wait()
+    end
+    
+    local _s = pcall(function()
+    
+    local aij = readfile('rakdot\\accounts_info.json')
+    local aij = game.HttpService:JSONDecode(aij)
+    if aij[lp] then
+        aij[lp]['Coins'] = cv
+        aij[lp]['Lvl'] = lvlcv
+    else
+        aij[lp] = {
+            Coins = cv;
+            Lvl = lvlcv;
+            Gems = -1;
+        }
+    end
+
+    
+
     local pretty_json = prete(game.HttpService:JSONEncode(aij))
     writefile('rakdot\\accounts_info.json', pretty_json)
 end)
+    end)
+    if not _s then
+    delfile('rakdot\\accounts_info.json')
+
+    end
 
 local lvl = game.Players.LocalPlayer:WaitForChild('Level')
 if not lvl then
