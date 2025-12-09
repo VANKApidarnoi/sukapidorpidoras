@@ -1,4 +1,4 @@
---loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oij"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oleya"))()
 task.wait(math.random(2,11)/10)
 if not getgenv().rakdotloaded then
 	getgenv().rakdotloaded = true
@@ -1817,7 +1817,7 @@ Balance: ]]..cv..'$','yellow')
 					end
 				end
 			end)
-
+			
 			if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Middle portal') and workspace.Map.Environment:FindFirstChild('Train') then
 				webhook:send('Loading ab','green')
 				loadscript_ab()
@@ -1852,7 +1852,7 @@ local TeleportCheck = false
 game.Players.LocalPlayer.OnTeleport:Connect(function(State)
 	if (not TeleportCheck) and queueteleport then
 		TeleportCheck = true
-		queueteleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oij"))()]])
+		queueteleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oleya"))()]])
 	end
 end)
 
