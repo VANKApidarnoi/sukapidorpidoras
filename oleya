@@ -1,0 +1,1859 @@
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oij"))()
+task.wait(math.random(2,11)/10)
+if not getgenv().rakdotloaded then
+	getgenv().rakdotloaded = true
+else
+	return
+end
+
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+function checkplayer()
+	local suc,res = pcall(function()
+		print(game.Players.LocalPlayer.Name)
+	end)
+	return suc
+end
+
+while not checkplayer() do
+	wait(1)
+end
+
+function que()
+    --[[while true do
+        task.wait(math.random(10,90)/100)
+        if not isfile('rakdot\\que') then
+            writefile('rakdot\\que',tostring(os.time()))
+            break
+        else
+            local ttt = tonumber(readfile('rakdot\\que'))
+            if os.time() - ttt > 7.5 then
+                writefile('rakdot\\que',tostring(os.time()))
+                break
+            end
+        end
+    end]]
+end
+
+function SCRIPT()
+
+	local sucka,reska = pcall(function()
+
+--[[local WL = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/WL'))()
+local access = false
+for i,v in ipairs(WL) do
+    if v:lower() == game.Players.LocalPlayer.Name:lower() then
+        access = true
+        break
+    end
+end
+if not access then
+    game.Players.LocalPlayer:Kick('get whitelist bro ez ez ez ez ez ze ez ezez eze ze')
+    while true do
+        warn('nani')
+    end
+    else
+    warn('WL!')
+end]]
+
+		wait(5)
+		function handOhand(async,hand)
+			if async then
+				task.spawn(function()
+					handOhand(false,hand)
+				end)
+				return
+			end
+			local hand = hand or {
+				'Soldier', 'Sniper', 'Militant', 'Scout'
+			}
+			for i,v in ipairs({'Unequip','Equip'}) do
+				for ii,tower in ipairs(hand) do
+					local args = {
+						[1] = "Inventory",
+						[2] = v,
+						[3] = "tower",
+						[4] = tower
+					}
+
+					game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+					task.wait(0.15)
+				end
+				if i == 1 then
+					wait(1)
+				end
+			end
+		end
+		function loadscript_amp()
+
+			local lvl0 = game.Players.LocalPlayer:WaitForChild('Level')
+			warn('KEE 1')
+			if not lvl0 then
+				wait(3)
+				lvl0 = game.Players.LocalPlayer:FindFirstChild('Level')
+				if not lvl0 then
+					while wait(3) do
+						que() game:GetService("TeleportService"):Teleport(3260590327)
+					end
+				end
+			end
+
+			local lvl = lvl0
+
+			warn('KEE 2')
+			local towers = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
+			local totowers42 = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/roblox%20tds%20cliff%20towers'))()
+			local huesositowers52 = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/roblox%20tds%20locked%20towers'))()
+			local plan = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
+			spawn(function ()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/outdikk"))();
+			end)
+			warn('KEE 3')
+			for i,v in {plan,towers} do
+				for tower,data in pairs(v) do
+					local ct = totowers42[tower]
+					if ct == 1 then
+						data.Typerakdot = 'Cliff'
+					else
+						data.Typerakdot = 'Ground'
+					end
+					data.Namerakdot = tower
+					local prev =  (data['Properties'] and data['Properties']['Price'] and data['Properties']['Price']['PreviewText']) or nil
+					if prev then
+						local firstNumber = prev.match(prev, "%d+")
+						if firstNumber then
+							data.LVLTOBUYrakdot = tonumber(firstNumber)
+						else
+							data.LVLTOBUYrakdot = 0
+						end
+					else
+						data.LVLTOBUYrakdot = 0
+					end
+				end
+			end
+			warn('KEE 4')
+			local lp = game.Players.LocalPlayer.Name
+			local dif
+			if lvl.Value >= 30 then
+				dif = 'Fallen'
+			elseif lvl.Value >= 15 then
+				dif = 'Molten'
+			elseif lvl.Value >= 5 then
+				dif = 'Intermediate'
+			else
+				dif = 'Easy'
+			end
+			local cfg = {
+				MM = {
+					difficulty = dif,
+					Count = 1,
+					Mode = 'survival'
+				}
+			}
+			function startgame()
+				wait(2)
+				que()
+				local args = {
+					[1] = "Multiplayer",
+					[2] = "v2:start",
+					[3] = {
+						["difficulty"] = cfg.MM.difficulty,
+						["count"] = cfg.MM.Count,
+						["mode"] = cfg.MM.Mode
+					}
+				}
+				warn('KEE match')
+				spawn(function ()
+					wait(7.5)
+					while wait(1) do warn('KEE teleport') 
+						que() game:GetService("TeleportService"):Teleport(3260590327)
+					end
+				end)
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+			end
+
+			warn('KEE 5')
+
+			local function coins()
+				return game.Players.LocalPlayer.Coins.Value
+			end
+
+			local buy_things_allowed = true
+
+			--local plan = {
+			--[1] = {Name = 'Soldier', Price = 400};
+			--[2] = {Name = 'Minigunner', Price = 8000};
+			--[3] = {Name = 'Farm', Price = 2500};
+			--[4] = {Name = 'Ranger', Price = 12000};
+			--[5] = {Name = 'Commander', Price = 4000};
+			--[6] = {Name = 'DJ Booth', Price = 5000};
+			--}
+
+			local owned_troops = {}
+			local current_hand = {}
+			local not_owned_troops = {}
+			warn('KEE 6')
+			game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild('Interface')
+			wait(1)
+			if not game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild('Interface') then
+				startgame()
+				while wait(3) do
+				end
+			end wait(1)
+
+			handOhand()
+			wait(1)
+			warn('KEE 7')
+			ke = false
+			while not game:GetService("Players").LocalPlayer.PlayerGui.Interface.Root:FindFirstChild('Inventory') do
+				wait(2)
+				ke = true
+			end
+			if ke then wait(2) end
+			for i,v in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.Interface.Root.Inventory.View.Frame.Frame.Frame.Layout.Panel.InventoryScroller:GetDescendants()) do
+				local spl = v.Name:split(":")
+				if spl then
+					if #spl == 2 then
+						spl[2] = tostring(spl[2])
+						spl[1] = tostring(spl[1])
+						if spl[1] == 'Troop' then
+							local states = v.States
+							if states.Equipped.Visible then print(5)
+								current_hand[spl[2]] = 1
+								owned_troops[spl[2]] = 1
+							else
+								if states.Locked.Visible then
+									not_owned_troops[spl[2]] = 1
+								else
+									owned_troops[spl[2]] = 1
+								end
+							end
+						end
+					end
+				end
+			end
+			warn('KEE 8')
+			for i,v in pairs(owned_troops) do
+				print('owned: ',i)
+			end
+			for sa=1,25 do
+				for i,v in pairs(plan) do
+					if table.find(huesositowers52,v.Namerakdot) or owned_troops[v.Namerakdot] or not (v['Properties'] and v['Properties']['Price'] and v['Properties']['Price']['Value']) then
+						plan[i] = nil
+						print('removing ',v.Namerakdot)
+					elseif v.LVLTOBUYrakdot > lvl.Value then
+						plan[i] = nil
+						print('removingLVL ',v.Namerakdot)
+					end
+				end
+			end
+			for i,v in pairs(plan) do
+				print('plan: ',v.Namerakdot)
+			end
+			warn('KEE 9')
+			local plen = {
+				Electroshocker = {Properties = {Price = {Value = 3000}}},
+				--Soldier = {Properties = {Price = {Value = 350}}},
+				Militant = {Properties = {Price = {Value = 500}}},
+				Shotgunner = {Properties = {Price = {Value = 1000}}},
+			}
+			for i,v in pairs(plen) do
+				if owned_troops[i] then
+					plen[i] = nil
+				end
+			end
+			function checkplan()
+				if game.Players.LocalPlayer.Level.Value >= 25 then
+					que() game:GetService("TeleportService"):Teleport(3260590327)
+				end
+				if buy_things_allowed then
+					for i,v in pairs(plen) do
+						if v['Properties'] and v['Properties']['Price'] and v['Properties']['Price']['Value'] then
+							if coins() >= v.Properties.Price.Value then
+								makefolder('rakdot') 
+								local lp = game.Players.LocalPlayer.Name
+								makefolder('rakdot\\'..lp)
+								writefile('rakdot\\'..lp..'\\buy.tower.rakdot', i)
+								--writefile('rakdot\\'..lp..'\\RETURN.rakdot', 'yo yo')
+								warn('buying ',i)
+								wait(0.1)
+								que() game:GetService("TeleportService"):Teleport(3260590327)
+								return true
+							end
+							task.wait()
+						end
+					end
+				end     
+			end
+
+			spawn(function()
+				while wait(0.25) do
+					if checkplan() then break end
+				end
+			end)
+			warn('KEE 10')
+			local tower_list = {}
+
+			local the
+			local ptf
+			local lowest = 10
+			pcall(function()
+			for i,v in ipairs(workspace:WaitForChild('IntermissionLobby',10).Boards:GetChildren()) do
+				local bal = 0
+				for e,ve in ipairs(v.Hitboxes.Bottom.MapDisplay.Rating:GetChildren()) do
+					if ve:IsA('ImageLabel') then
+						if ve.Visible then
+							bal = bal + 1
+						end
+					end
+				end
+				if bal < lowest then
+					print(bal)
+					lowest = bal
+					the = v.Hitboxes.Bottom.MapDisplay.Title.Text
+					ptf = v.Hitboxes.VotePlatform.Position
+				end
+			end end)
+			warn('KEE 11')
+
+			local args = {
+				[1] = "LobbyVoting",
+				[2] = "Vote",
+				[3] = the,
+				[4] = ptf
+			}
+
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+			local args = {
+				[1] = "LobbyVoting",
+				[2] = "Ready"
+			}
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+			wait(3)
+			warn('KEE 12')
+			if #game:GetService("Players").LocalPlayer.PlayerGui:GetChildren() < 30 then
+				startgame()
+			end
+			warn('KEE 13')
+			while not game:GetService("Players").LocalPlayer.PlayerGui.ReactGameTopGameDisplay.Frame.Visible do
+				task.wait()
+			end
+			task.wait(1)
+
+			local args = {
+				[1] = "LobbyVoting",
+				[2] = "Ready"
+			}
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+			local args = {
+				[1] = "Voting",
+				[2] = "Skip"
+			}
+			game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+
+			workspace.NPCs.ChildAdded:Once(function(ch)
+				wait(0.5)
+				start = ch:WaitForChild('Torso')
+				print(start.Position)
+			end)
+
+			while not start do wait() end
+			start = {Position = start.Position} -- to be statistic
+			warn('KEE 114444444444')
+			local pretend1 = workspace.Map.Road:GetChildren()
+			local pretend2 = workspace.Boundaries:GetDescendants()
+			if #pretend1 < #pretend2 then
+				doroga = workspace.Boundaries
+			else
+				doroga = workspace.Map.Road
+			end
+
+
+			warn(#doroga:GetChildren())
+
+			local map, target_lvl
+
+			local pert = Instance.new("Part")
+			pert.Size = Vector3.new(0.3, 100, 0.3)
+			pert.Transparency = 0.3
+			pert.Anchored = true
+			pert.CanTouch = false
+			pert.CanCollide = false
+			pert.Parent = workspace
+			pert.Color = Color3.fromRGB(255, 0, 0)
+
+			local psyh_towers = workspace.Towers
+			--local towers = {
+			--['Soldier'] = {['Name']='Soldier',['Cost']=350,['Type']='Ground'},
+			--['Sniper'] = {['Name']='Sniper',['Cost']=300,['Type']='Cliff'},
+			--['Minigunner'] = {['Name']='Minigunner',['Cost']=1850,['Type']='Ground'},
+			--['Farm'] = {['Name']='Farm',['Cost']=250,['Type']='Ground'},
+			--['Ranger'] = {['Name']='Ranger',['Cost']=12000,['Type']='Cliff'},
+			--['Commander'] = {['Name']='Commander',['Cost']=4000,['Type']='Ground'},
+			--['DJ Booth'] = {['Name']='DJ Booth',['Cost']=5000,['Type']='Ground'},
+			--}
+
+			local skips = {Cliff = 0, Ground = 0}
+
+			local first
+			local minDist = math.huge
+			for i, v in ipairs(doroga:GetChildren()) do
+				if v:IsA('BasePart') then
+					v.CanCollide = true
+					v.CanTouch = true
+					v.CanQuery = true
+					v.Size = v.Size + Vector3.new(0.1, 0.1, 0.1)
+					local dist = (v.Position - start.Position).Magnitude
+					if dist < minDist then
+						minDist = dist
+						first = v
+					end
+				end
+			end
+
+			local firstC
+			local minDist = math.huge
+
+			for i, v in ipairs(workspace.Cliff:GetChildren()) do
+				if v:IsA('BasePart') then
+					v.CanCollide = true
+					v.CanTouch = true
+					v.CanQuery = true
+					v.Size = v.Size + Vector3.new(0.1, 0.1, 0.1)
+					local dist = (v.Position - start.Position).Magnitude
+					if dist < minDist then
+						minDist = dist
+						firstC = v
+					end
+				end
+			end
+
+			local function findMostPopularName(objectList)
+				if not objectList or #objectList == 0 then
+					return nil, "Object list is empty."
+				end
+				local nameCounts = {}
+				for _, obj in ipairs(objectList) do
+					if obj and obj.Name then
+						local name = tostring(obj.Name)
+						nameCounts[name] = (nameCounts[name] or 0) + 1
+					end
+				end
+				if next(nameCounts) == nil then
+					return nil, "No objects in the list have a 'Name' property."
+				end
+				local mostPopularName = nil
+				local maxCount = 0
+				for name, count in pairs(nameCounts) do
+					if count > maxCount then
+						maxCount = count
+						mostPopularName = name
+					end
+				end
+				return mostPopularName, nil
+			end
+
+			local basename,err = findMostPopularName(doroga:GetChildren())
+
+			local worked = {
+				first
+			}
+
+			local road = {
+				[1] = first
+			}
+
+			local cur = first
+			breaking = false
+			while task.wait() do
+				if breaking then print(1)
+					break
+				end
+				if cur == bcur then print(2)
+					break
+				end
+				cur.Touched:Connect(function() end)
+				wait()
+				warn(cur)
+				local touches = cur:GetTouchingParts()
+				for huhu,touch in ipairs(touches) do
+					print(touch)
+					local cc = true
+					if (not touch:IsDescendantOf(doroga)) or touch.Name ~= basename then 
+						if huhu >= #touches then
+							breaking = true
+							break
+						end
+						cc = false
+					end
+					if cc then
+						local isworked = false
+						for i,v in ipairs(worked) do
+							if v == touch then
+								isworked = true
+							end
+						end
+						table.insert(worked,touch)
+						if not isworked then
+							print('choised ',touch)
+							road[#road+1] = touch
+							bcur = cur
+							cur = touch
+							break
+						else
+							if huhu >= #touches then
+								breaking = true
+								break
+							end
+						end
+					end
+				end
+			end
+
+			warn(#road)
+
+			local placemap = { -- manipulate it lol
+
+			}
+
+			function place(sekeps)
+
+				local function getExpandedCorners(part, expansion)
+					local size = part.Size
+					local cf = part.CFrame
+					local newHalfX = (size.X / 2) + expansion
+					local newHalfZ = (size.Z / 2) + expansion
+					local topLeftLocal = Vector3.new(-newHalfX, 0, -newHalfZ)
+					local bottomRightLocal = Vector3.new(newHalfX, 0, newHalfZ)
+					local worldTopLeft = cf:PointToWorldSpace(topLeftLocal)
+					local worldBottomRight = cf:PointToWorldSpace(bottomRightLocal)
+					return worldTopLeft, worldBottomRight
+				end
+
+				local function bal()
+					local temp123 = game:GetService("Players").LocalPlayer.PlayerGui.ReactUniversalHotbar.Frame.values.cash.amount.Text:gsub('%$',''):gsub(',','')
+					local cash = tonumber(temp123)
+					return cash
+				end
+
+				local tower = towers[placemap[1]]
+				if not tower then
+					warn('no tower...........')
+					return
+				end
+
+				if tower.Typerakdot == 'Cliff' then
+					local cliffs = workspace.Cliff:GetChildren()
+					for i,v in ipairs(cliffs) do
+						if v:IsA('BasePart') and not v:IsA('Model') then
+							v.CanCollide = true
+							v.CanTouch = true
+							v.CanQuery = true
+						else
+							table.remove(cliffs, table.find(cliffs, v))
+						end
+					end
+					table.sort(cliffs, function(a, b)
+						return (a.Position - start.Position).Magnitude < (b.Position - start.Position).Magnitude
+					end)
+					n=0
+					local kur = 0
+					local startedwith = map[#psyh_towers:GetChildren()]
+					local skip_done = false
+					for i,cliff in ipairs(cliffs) do
+						if cliff:IsA('BasePart') then
+
+							local point1, point2 = getExpandedCorners(cliff, 1)
+							local minX, maxX = math.min(point1.X, point2.X), math.max(point1.X, point2.X)
+							local minZ, maxZ = math.min(point1.Z, point2.Z), math.max(point1.Z, point2.Z)
+							local totalX = math.floor((maxX - minX) / 0.1) + 1
+							local totalZ = math.floor((maxZ - minZ) / 0.1) + 1
+							local totalPoints = totalX * totalZ
+
+							local startX, startZ = minX, minZ
+
+							-- If we still need to skip
+							if not skip_done and sekeps[tower.Typerakdot] > 0 then
+								local to_skip = math.min(sekeps[tower.Typerakdot], totalPoints)
+								-- Calculate how many full rows to skip
+								local rows_to_skip = math.floor(to_skip / totalZ)
+								local remain_to_skip = to_skip % totalZ
+
+								startX = minX + rows_to_skip * 0.1
+								startZ = minZ + remain_to_skip * 0.1
+
+								kur = kur + to_skip
+								sekeps[tower.Typerakdot] = sekeps[tower.Typerakdot] - to_skip
+								if sekeps[tower.Typerakdot] <= 0 then
+									skip_done = true
+								end
+							end
+
+							for x = startX, maxX, 0.1 do
+								for z = (x == startX and startZ or minZ), maxZ, 0.1 do
+									-- No need to check kur < sekeps[tower.Typerakdot] anymore, as we already skipped efficiently
+									if tower.Stats.Default.Defaults.Price > bal() then
+										warn('катастрофа')
+										--katas
+										return
+									end
+									local bleh = game:GetService("Players").LocalPlayer.PlayerGui.ReactUniversalHotbar.Frame.values.placement.amount.Text:split('/')
+									local placed = tonumber(bleh[1])
+									local maxplace = tonumber(bleh[2])
+									if placed >= maxplace then
+										warn('katastrofa')
+										--katas
+										return
+									end
+
+									local trops_amount = #psyh_towers:GetChildren()
+									local tower = towers[placemap[1]]
+									if not tower then
+										return
+									end
+
+									if map[trops_amount] ~= startedwith then
+										target_lvl = map[trops_amount]
+										warn('targetEING ! level: ',target_lvl)
+										print('katastrofa')
+										--katas
+										return
+									end
+
+									skips[tower.Typerakdot] = skips[tower.Typerakdot] + 1
+
+									n = n + 1
+									if n >= 50 then
+										task.wait()
+										n = 0
+									end print(4)
+									local coord = Vector3.new(x, cliff.Position.Y+10.5, z)
+									print('pr crd ',coord)
+									pert.Position = coord
+									local part, position, normal, material = workspace:FindPartOnRay(Ray.new(coord, Vector3.new(0,-100,0)))
+									warn(part)
+									local ray = {Instance = part, Position = position}
+									if ray and part then
+										print('ray: ',ray)
+										if ray.Instance:IsDescendantOf(workspace.Cliff) then
+											print('can place CLEFFOO yoy oyo yoy o ',ray.Position, ' and the path is ', cliff.Position)
+											local ray = ray
+											coroutine.wrap(function()
+												local tower = tower
+												local args = {
+													[1] = "Troops",
+													[2] = "Pl\208\176ce", --its right
+													[3] = {
+														["Rotation"] = CFrame.new(0, 0, 0) * CFrame.Angles(-0, 0,-0),
+														["Position"] = ray.Position
+													},
+													[4] = tower.Namerakdot
+												}
+
+												local res = game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+												if tostring(res) == 'Default' then
+													if tower_list[tower.Namerakdot] then
+														tower_list[tower.Namerakdot] = tower_list[tower.Namerakdot] + 1
+													else
+														tower_list[tower.Namerakdot] = 1
+													end
+												end
+											end)()
+											--return
+										end
+									end
+								end
+							end
+
+						end
+					end
+					warn('NO CLIFFS ANYMORE')
+					cliffs = false
+					return
+				elseif tower.Typerakdot == 'Ground' then
+
+					n=0
+					local kur = 0
+					local startedwith = map[#psyh_towers:GetChildren()]
+					local skip_done = false
+
+					for index, path in ipairs(road) do
+						local point1, point2 = getExpandedCorners(path, 4)
+						local minX, maxX = math.min(point1.X, point2.X), math.max(point1.X, point2.X)
+						local minZ, maxZ = math.min(point1.Z, point2.Z), math.max(point1.Z, point2.Z)
+						local totalX = math.floor((maxX - minX) / 0.1) + 1
+						local totalZ = math.floor((maxZ - minZ) / 0.1) + 1
+						local totalPoints = totalX * totalZ
+
+						local startX, startZ = minX, minZ
+
+						-- If we still need to skip
+						if not skip_done and sekeps[tower.Typerakdot] > 0 then
+							local to_skip = math.min(sekeps[tower.Typerakdot], totalPoints)
+							-- Calculate how many full rows to skip
+							local rows_to_skip = math.floor(to_skip / totalZ)
+							local remain_to_skip = to_skip % totalZ
+
+							startX = minX + rows_to_skip * 0.1
+							startZ = minZ + remain_to_skip * 0.1
+
+							kur = kur + to_skip
+							sekeps[tower.Typerakdot] = sekeps[tower.Typerakdot] - to_skip
+							if sekeps[tower.Typerakdot] <= 0 then
+								skip_done = true
+							end
+						end
+
+
+						for x = startX, maxX, 0.1 do
+							for z = (x == startX and startZ or minZ), maxZ, 0.1 do
+								-- No need to check kur < sekeps[tower.Typerakdot] anymore, as we already skipped efficiently
+								if tower.Stats.Default.Defaults.Price > bal() then
+									warn('катастрофа')
+									--katas
+									return
+								end
+								local bleh = game:GetService("Players").LocalPlayer.PlayerGui.ReactUniversalHotbar.Frame.values.placement.amount.Text:split('/')
+								local placed = tonumber(bleh[1])
+								local maxplace = tonumber(bleh[2])
+								if placed >= maxplace then
+									warn('katastrofa')
+									--katas
+									return
+								end
+
+								if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
+									return
+								end
+
+								local trops_amount = #psyh_towers:GetChildren()
+								local tower = towers[placemap[1]]
+								if not tower then
+									return
+								end
+
+								if map[trops_amount] ~= startedwith then
+									target_lvl = map[trops_amount]
+									warn('targetEING ! level: ',target_lvl)
+									print('katastrofa')
+									--katas
+									return
+								end
+
+								skips[tower.Typerakdot] = skips[tower.Typerakdot] + 1
+
+								n = n + 1
+								if n >= 50 then
+									task.wait()
+									n = 0
+								end print(4)
+								local coord = Vector3.new(x, path.Position.Y+10.5, z)
+								print('pr crd ',coord)
+								pert.Position = coord
+								local part, position, normal, material = workspace:FindPartOnRay(Ray.new(coord, Vector3.new(0,-100,0)))
+								warn(part)
+								local ray = {Instance = part, Position = position}
+								if ray and part then
+									print('ray: ',ray)
+									if ray.Instance:IsDescendantOf(workspace.Ground) then
+										print('can place yoy oyo yoy o ',ray.Position, ' and the path is ', path.Position)
+										local ray = ray
+										coroutine.wrap(function()
+											local tower = tower
+											local args = {
+												[1] = "Troops",
+												[2] = "Pl\208\176ce", --its right
+												[3] = {
+													["Rotation"] = CFrame.new(0, 0, 0) * CFrame.Angles(-0, 0,-0),
+													["Position"] = ray.Position
+												},
+												[4] = tower.Namerakdot
+											}
+
+											local res = game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+											if tostring(res) == 'Default' then
+												if tower_list[tower.Namerakdot] then
+													tower_list[tower.Namerakdot] = tower_list[tower.Namerakdot] + 1
+												else
+													tower_list[tower.Namerakdot] = 1
+												end
+											end
+										end)()
+										--return
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+
+			local function lvl(tower)
+				local objects = tower.Upgrades:GetChildren()
+				local sorted = table.create(#objects)
+				for i, obj in ipairs(objects) do
+					sorted[i] = obj
+				end
+				table.sort(sorted, function(a, b)
+					return tonumber(a.Name) < tonumber(b.Name)
+				end)
+
+				for i, obj in ipairs(sorted) do
+					local allTransparent = true
+
+					for _, desc in ipairs(obj:GetDescendants()) do
+						if desc:IsA("BasePart") and desc.Transparency < 1 then
+							allTransparent = false
+							break
+						end
+					end
+
+					if allTransparent then
+						if i > 1 then
+							return sorted[i - 1].Name
+						else
+							return nil
+						end
+					end
+				end
+
+				if #sorted > 0 then
+					return tonumber(sorted[#sorted].Name)
+				else
+					return nil
+				end
+			end
+
+			function upg(tower)
+				warn('upg')
+				local args = {
+					[1] = "Troops",
+					[2] = "Upgrade",
+					[3] = "Set",
+					[4] = {
+						["Troop"] = tower,
+						["Path"] = 1
+					}
+				}
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+			end
+
+			target_lvl = 0
+
+			function do_upg(levels,minLevel)
+				warn('Good time for upg!')
+				for i,v in ipairs(psyh_towers:GetChildren()) do
+					if levels[i] < target_lvl then
+						warn('checks level: ',levels[i])
+						warn('target level: ',target_lvl)
+						for ie = levels[i], target_lvl-1 do
+							upg(v)
+							wait(0.1)
+						end
+					end
+				end
+			end
+
+			function do_place(cash)
+				print('do place')
+				print(placemap[1])
+				print(towers[placemap[1]])
+				print(towers[placemap[1]].Stats.Default.Defaults.Price)
+				if cash >= towers[placemap[1]].Stats.Default.Defaults.Price then
+					place(skips)
+					wait(3)
+				end
+			end
+
+			psyh_towers.ChildAdded:Connect(function(tower)
+				if target_lvl == 0 then
+					return
+				end
+				for i = 1, target_lvl do
+					upg(tower)
+					wait(0.1)
+				end
+			end)
+
+			map = {
+				[0] = 0;
+				[1] = 0;
+				[2] = 0;
+				[3] = 0;
+				[4] = 0;
+				[5] = 1;
+				[6] = 1;
+				[7] = 1;
+				[8] = 1;
+				[9] = 1;
+				[10] = 2;
+				[11] = 2;
+				[12] = 2;
+				[13] = 2;
+				[14] = 2;
+				[15] = 2;
+				[16] = 2;
+				[17] = 2;
+				[18] = 2;
+				[19] = 2;
+				[20] = 2;
+				[21] = 2;
+				[22] = 2;
+				[23] = 3;
+				[24] = 3;
+				[25] = 3;
+				[26] = 3;
+				[27] = 3;
+				[28] = 3;
+				[29] = 3;
+				[30] = 3;
+				[31] = 3;
+				[32] = 3;
+				[33] = 3;
+				[34] = 3;
+				[35] = 3;
+				[36] = 3;
+				[37] = 3;
+				[38] = 3;
+				[39] = 3;
+				[40] = 4;
+			}
+
+			coroutine.wrap(function()
+				while wait(0.5) do
+
+					if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
+
+						if checkplan() then break end
+
+						wait(2)
+
+						startgame()
+
+						break
+
+					end
+				end
+			end)()
+			warn('hand:')
+			for i,v in pairs(current_hand) do
+				print(i,v)
+			end
+			local thefirst = ((current_hand['Militant'] and 'Militant') or false) or ((current_hand['Soldier'] and 'Soldier') or false) or 'Scout'
+			local target_place = {-- v target amout, vv when its coming
+				[tostring(thefirst)] = {v=13,vv=0};
+				['Sniper'] = {v=17,vv=3};
+			}
+			while task.wait(1) do
+				local bal = game:GetService("Players").LocalPlayer.PlayerGui.ReactUniversalHotbar.Frame.values.cash.amount.Text:gsub('%$',''):gsub(',','')
+				local cash = tonumber(bal)
+				local trops_amount = #psyh_towers:GetChildren()
+				local bleh = game:GetService("Players").LocalPlayer.PlayerGui.ReactUniversalHotbar.Frame.values.placement.amount.Text:split('/')
+				local placed = tonumber(bleh[1])
+				local maxplace = tonumber(bleh[2])
+				local levels = {}
+				for i,v in ipairs(psyh_towers:GetChildren()) do
+					local got = lvl(v)
+					if got then
+						levels[i] = tonumber(got)
+					end
+				end
+				local minLevel = 999
+				for _, level in ipairs(levels) do
+					warn('level: ',level)
+					if level and level < minLevel then
+						minLevel = level
+					end
+				end
+				if minLevel == 999 then
+					minLevel = 0
+				end
+				if game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
+					wait(4)
+					startgame()
+				end
+				warn('tropps amount: ',trops_amount)
+				warn('mapped: ',map[trops_amount])
+				warn('minLevel: ',minLevel)
+				if trops_amount < 30 and not game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
+
+					local args = {
+						[1] = "Voting",
+						[2] = "Skip"
+					}
+					game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+				elseif game:GetService("Players").LocalPlayer.PlayerGui.ReactGameNewRewards.Frame.gameOver.Visible then
+					wait(4)
+					startgame()
+				end
+				if (minLevel < map[trops_amount]) then
+					target_lvl = map[trops_amount]
+					warn('targetEING ! level: ',target_lvl)
+					do_upg(levels,minLevel)
+				elseif placed < maxplace then
+					local target = target_place
+					local current = tower_list
+
+					local maxRatio = -math.huge
+					local worstKey = nil
+
+					for key, targetValue in pairs(target) do
+						if targetValue.vv <= #psyh_towers:GetChildren() then
+							local currentValue = current[key] or 0
+							local diff = math.clamp((targetValue.v - currentValue) / targetValue.v, 0, 1) -- clamp от 0 до 1
+							if diff > maxRatio then
+								maxRatio = diff
+								worstKey = key
+							end
+						end
+					end
+					if worstKey == nil then
+						warn('no towers to place, but why?')
+						return
+					end
+					warn('worstKey: ',worstKey,' and the ratio is ',maxRatio)
+					placemap = {
+						worstKey
+					}
+					do_place(cash)
+					wait(1.5)
+				end
+			end
+		end
+		function loadscript_ab()
+			warn('loadeng ab')
+			local buy_things_allowed = true
+
+			local lvl = game.Players.LocalPlayer:WaitForChild('Level')
+			if not lvl then
+				wait(3)
+				lvl = game.Players.LocalPlayer:FindFirstChild('Level')
+				if not lvl then
+					while wait(3) do
+						game:GetService("TeleportService"):Teleport(3260590327)
+					end
+				end
+			end
+			
+			handOhand(false,{"Electroshocker","Shotgunner"})
+
+			local function coins()
+				return game.Players.LocalPlayer.Coins.Value
+			end
+
+			local towers = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
+			local totowers42 = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/roblox%20tds%20cliff%20towers'))()
+			local huesositowers52 = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/roblox%20tds%20locked%20towers'))()
+			local plan = loadstring(game:HttpGet('https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/useless'))()
+			spawn(function ()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/trash/refs/heads/main/outdikk"))();
+			end)
+			if buy_things_allowed then
+				for i,v in {plan,towers} do
+					for tower,data in pairs(v) do
+						local ct = totowers42[tower]
+						if ct == 1 then
+							data.Typerakdot = 'Cliff'
+						else
+							data.Typerakdot = 'Ground'
+						end
+						data.Namerakdot = tower
+						local prev =  (data['Properties'] and data['Properties']['Price'] and data['Properties']['Price']['PreviewText']) or nil
+						if prev then
+							local firstNumber = prev.match(prev, "%d+")
+							if firstNumber then
+								data.LVLTOBUYrakdot = tonumber(firstNumber)
+							else
+								data.LVLTOBUYrakdot = 0
+							end
+						else
+							data.LVLTOBUYrakdot = 0
+						end
+					end
+				end
+				local owned_troops = {}
+				local current_hand = {}
+				local not_owned_troops = {}
+
+				game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild('Interface')
+				wait(1)
+				if not game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild('Interface') then
+					local sterr = tick()
+					while wait(3) do
+						if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild('Interface') then break end
+						if tick()-sterr > 17.5 then
+							game:GetService("TeleportService"):Teleport(3260590327) end
+					end
+				end wait(1)
+				ke = false
+				while not game:GetService("Players").LocalPlayer.PlayerGui.Interface.Root:FindFirstChild('Inventory') do
+					wait(2)
+					ke = true
+				end
+				if ke then wait(2) end
+				for i,v in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.Interface.Root.Inventory.View.Frame.Frame.Frame.Layout.Panel.InventoryScroller:GetDescendants()) do
+					local spl = v.Name:split(":")
+					if spl then
+						if #spl == 2 then
+							spl[2] = tostring(spl[2])
+							spl[1] = tostring(spl[1])
+							if spl[1] == 'Troop' then
+								local states = v.States
+								if states.Equipped.Visible then print(5)
+									current_hand[spl[2]] = 1
+									owned_troops[spl[2]] = 1
+								else
+									if states.Locked.Visible then
+										not_owned_troops[spl[2]] = 1
+									else
+										owned_troops[spl[2]] = 1
+									end
+								end
+							end
+						end
+					end
+				end
+
+				for i,v in pairs(owned_troops) do
+					print('owned: ',i)
+				end
+				for sa=1,25 do
+					for i,v in pairs(plan) do
+						if table.find(huesositowers52,v.Namerakdot) or owned_troops[v.Namerakdot] or not (v['Properties'] and v['Properties']['Price'] and v['Properties']['Price']['Value']) then
+							plan[i] = nil
+							print('removing ',v.Namerakdot)
+						elseif v.LVLTOBUYrakdot > lvl.Value then
+							plan[i] = nil
+							print('removingLVL ',v.Namerakdot)
+						end
+					end
+				end
+				for i,v in pairs(plan) do
+					print('plan: ',v.Namerakdot)
+				end
+				
+				local plen = {
+					Electroshocker = {Properties = {Price = {Value = 3000}}},
+					--Soldier = {Properties = {Price = {Value = 350}}},
+					Militant = {Properties = {Price = {Value = 500}}},
+					Shotgunner = {Properties = {Price = {Value = 1000}}},
+				}
+				for i,v in pairs(plen) do
+					if owned_troops[i] then
+						plen[i] = nil
+					end
+				end
+				function checkplan()
+					if buy_things_allowed then
+						for i,v in pairs(plen) do
+							if v['Properties'] and v['Properties']['Price'] and v['Properties']['Price']['Value'] then
+								if coins() >= v.Properties.Price.Value then
+									makefolder('rakdot') 
+									local lp = game.Players.LocalPlayer.Name
+									makefolder('rakdot\\'..lp)
+									writefile('rakdot\\'..lp..'\\buy.tower.rakdot', i)
+									--writefile('rakdot\\'..lp..'\\RETURN.rakdot', 'yo yo')
+									warn('buying ',i)
+									wait(0.1)
+									que() game:GetService("TeleportService"):Teleport(3260590327)
+									return true
+								end
+								task.wait()
+							end
+						end
+					end     
+				end
+
+				spawn(function()
+					local co = coroutine.create(function()
+						while wait(0.25) do
+							if checkplan() then break end
+						end
+					end)
+					coroutine.resume(co)
+					wait(7)
+					coroutine.close(co)
+				end)
+
+			end
+
+			warn('loadeng ab 2 ye')
+
+			local lt = 0
+			workspace:WaitForChild('Towers').ChildAdded:Connect(function(c)
+				lt = lt + 1
+				c.Name = 'towir_'..tostring(lt)
+				task.wait()
+				c.Name = 'towir_'..tostring(lt)
+			end)
+
+			function parsetimeleft(tl)
+				local parts = string.split(tl,':')
+				local tr = -1
+				pcall(function()
+					tr = tonumber( tonumber((parts[1])*60)+tonumber(parts[2]) )
+				end)
+				return tr or -1
+			end
+
+			function watl()
+				local wave,timeleft = game:GetService("Players").LocalPlayer.PlayerGui.ReactGameTopGameDisplay.Frame.wave.container.value.Text,game:GetService("Players").LocalPlayer.PlayerGui.ReactGameTopGameDisplay.Frame.waveTimer.container.value.Text
+				local timeleft = tostring(timeleft)
+				local wave = tostring(wave)
+				local wave0 = wave:split(' ')
+				local wave = wave0[1]
+				return {tonumber(wave) or -1,parsetimeleft(timeleft)}
+			end
+
+
+			local Script = game.HttpService:JSONDecode([[[{"action":"skip","timecode":[-1,0]},{"timecode":[1,59],"position":[-4.731485843658447,1.0000022649765015,6.776761531829834],"action":"place","tower":"Shotgunner"},{"timecode":[1,57],"action":"upgrade","tower":"towir_1"},{"timecode":[1,55],"position":[-4.8701348304748539,1.0000022649765015,12.532690048217774],"action":"place","tower":"Shotgunner"},{"timecode":[1,53],"action":"upgrade","tower":"towir_2"},{"action":"skip","timecode":[1,39]},{"timecode":[2,49],"position":[0.004559993743896484,1.0000022649765015,12.504549026489258],"action":"place","tower":"Shotgunner"},{"timecode":[2,43],"action":"upgrade","tower":"towir_3"},{"action":"skip","timecode":[2,39]},{"timecode":[3,59],"position":[0.4675031900405884,1.0000022649765015,7.697578430175781],"action":"place","tower":"Shotgunner"},{"timecode":[3,57],"action":"upgrade","tower":"towir_4"},{"timecode":[4,58],"position":[-6.888569355010986,1.0000022649765015,12.651264190673829],"action":"place","tower":"Shotgunner"},{"timecode":[4,56],"action":"upgrade","tower":"towir_5"},{"action":"skip","timecode":[4,38]},{"timecode":[5,56],"position":[-9.194568634033204,1.0000022649765015,13.680967330932618],"action":"place","tower":"Electroshocker"},{"timecode":[5,54],"action":"upgrade","tower":"towir_6"},{"timecode":[5,47],"action":"upgrade","tower":"towir_6"},{"action":"skip","timecode":[5,38]},{"timecode":[6,51],"position":[-4.9239606857299809,1.0000022649765015,14.671948432922364],"action":"place","tower":"Shotgunner"},{"timecode":[6,49],"action":"upgrade","tower":"towir_7"},{"timecode":[6,39],"position":[-11.542211532592774,1.0000022649765015,12.749063491821289],"action":"place","tower":"Shotgunner"},{"timecode":[6,38],"action":"upgrade","tower":"towir_8"},{"action":"skip","timecode":[6,37]},{"timecode":[7,59],"position":[-13.716967582702637,1.0000022649765015,13.037923812866211],"action":"place","tower":"Shotgunner"},{"timecode":[7,56],"action":"upgrade","tower":"towir_9"},{"timecode":[7,49],"position":[-9.202366828918457,1.0000022649765015,16.68414306640625],"action":"place","tower":"Electroshocker"},{"timecode":[7,47],"action":"upgrade","tower":"towir_10"},{"timecode":[7,46],"action":"upgrade","tower":"towir_10"},{"action":"skip","timecode":[7,39]},{"timecode":[8,58],"position":[-13.814291000366211,1.0000022649765015,7.145414352416992],"action":"place","tower":"Shotgunner"},{"timecode":[8,57],"action":"upgrade","tower":"towir_11"},{"timecode":[8,55],"position":[-6.797261714935303,1.0000022649765015,6.839285373687744],"action":"place","tower":"Shotgunner"},{"timecode":[8,53],"action":"upgrade","tower":"towir_12"},{"timecode":[8,48],"position":[-9.315956115722657,1.0000022649765015,6.992124080657959],"action":"place","tower":"Electroshocker"},{"timecode":[8,47],"action":"upgrade","tower":"towir_13"},{"timecode":[8,43],"position":[-11.832504272460938,1.0000022649765015,6.842480182647705],"action":"place","tower":"Shotgunner"},{"timecode":[8,42],"action":"upgrade","tower":"towir_14"},{"action":"skip","timecode":[8,36]},{"timecode":[9,59],"action":"upgrade","tower":"towir_13"},{"timecode":[9,49],"action":"upgrade","tower":"towir_2"},{"timecode":[9,48],"action":"upgrade","tower":"towir_5"},{"action":"skip","timecode":[9,39]},{"timecode":[10,74],"action":"upgrade","tower":"towir_9"},{"timecode":[10,72],"action":"upgrade","tower":"towir_8"},{"timecode":[10,66],"action":"upgrade","tower":"towir_3"},{"timecode":[10,51],"action":"upgrade","tower":"towir_12"},{"action":"skip","timecode":[10,50]},{"timecode":[11,74],"action":"upgrade","tower":"towir_1"},{"timecode":[11,73],"action":"upgrade","tower":"towir_4"},{"timecode":[11,71],"action":"upgrade","tower":"towir_14"},{"action":"skip","timecode":[11,54]},{"timecode":[12,74],"action":"upgrade","tower":"towir_10"},{"timecode":[12,73],"action":"upgrade","tower":"towir_6"},{"timecode":[12,63],"position":[-0.030069828033447267,1.0000022649765015,14.541297912597657],"action":"place","tower":"Shotgunner"},{"timecode":[12,61],"action":"upgrade","tower":"towir_15"},{"timecode":[12,56],"action":"upgrade","tower":"towir_15"},{"action":"skip","timecode":[12,54]},{"timecode":[13,74],"action":"upgrade","tower":"towir_13"},{"timecode":[13,72],"action":"upgrade","tower":"towir_7"},{"timecode":[13,66],"action":"upgrade","tower":"towir_11"},{"timecode":[13,54],"position":[2.0445780754089357,1.0000022649765015,12.723875999450684],"action":"place","tower":"Shotgunner"},{"action":"skip","timecode":[13,53]},{"timecode":[14,74],"action":"upgrade","tower":"towir_16"},{"timecode":[14,74],"action":"upgrade","tower":"towir_16"},{"timecode":[14,71],"action":"upgrade","tower":"towir_6"},{"action":"skip","timecode":[14,54]},{"timecode":[15,71],"action":"upgrade","tower":"towir_10"},{"timecode":[15,65],"position":[-18.345754623413087,1.0000022649765015,9.659210205078125],"action":"place","tower":"Shotgunner"},{"timecode":[15,64],"action":"upgrade","tower":"towir_17"},{"timecode":[15,63],"action":"upgrade","tower":"towir_17"},{"timecode":[15,61],"position":[0.7549226880073547,1.0000022649765015,5.692019939422607],"action":"place","tower":"Shotgunner"},{"timecode":[15,60],"action":"upgrade","tower":"towir_18"},{"timecode":[15,59],"action":"upgrade","tower":"towir_18"},{"timecode":[15,58],"position":[-4.742464065551758,1.0000022649765015,4.708220481872559],"action":"place","tower":"Shotgunner"},{"timecode":[15,57],"action":"upgrade","tower":"towir_19"},{"timecode":[15,56],"action":"upgrade","tower":"towir_19"},{"timecode":[15,54],"position":[-14.448298454284668,1.0000022649765015,5.117806911468506],"action":"place","tower":"Shotgunner"},{"timecode":[15,53],"action":"upgrade","tower":"towir_20"},{"timecode":[15,53],"action":"upgrade","tower":"towir_20"},{"action":"skip","timecode":[15,52]},{"action":"end"},{"action":"finished","timecode":[-1,-1]}] ]])
+
+			for index,action in ipairs(Script) do
+				local timecode = action['timecode']
+				local _action = action.action
+				warn(index,'Will do '.._action..' on '..game.HttpService:JSONEncode(timecode or {"nil (now)"}))
+				if timecode then
+					while (timecode[1] ~= -1 and (watl()[1] < timecode[1])) or watl()[2] > timecode[2] or (watl()[2] < 6 and timecode[2] ~= 0 and not (timecode[2] == -1 and watl()[2] == -1)) do
+						print(index,'waiting',watl()[1] < timecode[1],watl()[2] > timecode[2])
+						task.wait()
+					end
+				end
+				if _action == "place" then
+					local tower = action.tower
+					local _pos = action.position
+					local position = Vector3.new(_pos[1],_pos[2],_pos[3])
+					local args = {
+						[1] = "Troops",
+						[2] = "Pl\208\176ce",
+						[3] = {
+							["Rotation"] = CFrame.new(0, 0, 0, 1, -0, 0, 0, 1, -0, 0, 0, 1),
+							["Position"] = position
+						},
+						[4] = tower
+					}
+					warn(index,'sending place')
+					task.spawn(function()
+						local r = game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+						warn(index,'result:',r)
+					end)
+				elseif _action == "upgrade" then
+					local _tower = action.tower
+					local tower = workspace:WaitForChild('Towers'):WaitForChild(_tower)
+					local args = {
+						[1] = "Troops",
+						[2] = "Upgrade",
+						[3] = "Set",
+						[4] = {
+							["Troop"] = tower,
+							["Path"] = 1
+						}
+					}
+					warn(index,'sending upgrade')
+					task.spawn(function()
+						local r = game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+						warn(index,'result:',r)
+					end)
+				elseif _action == "skip" then
+					task.spawn(function()
+						for i=1,50 do
+							local args = {
+								[1] = "Voting",
+								[2] = "Skip"
+							}
+
+							game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+							task.wait(0.25)
+						end
+					end)
+				elseif _action == 'end' then
+					for i,tower in ipairs(workspace.Towers:GetChildren()) do
+						local args = {
+							[1] = "Troops",
+							[2] = "Sell",
+							[3] = {
+								["Troop"] = tower
+							}
+						}
+						task.spawn(function()
+							game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+						end) task.wait()
+					end
+				elseif _action == 'finished' then
+					while true do
+						local args = {
+							[1] = "Multiplayer",
+							[2] = "v2:start",
+							[3] = {
+								["count"] = 1,
+								["mode"] = "badlands"
+							}
+						}
+
+						game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+
+						task.wait(10)
+					end
+				end
+			end
+
+
+		end
+
+		while not game.IsLoaded(game) do wait() end
+
+		makefolder('rakdot') 
+		local lp = game.Players.LocalPlayer.Name
+		makefolder('rakdot\\'..lp)
+
+		local hul1 = [[https://discord.com/api/webho]]
+		local hul2 = [[oks/1386516434544496700/MghMeg56W-BGT7u2RHc6UDM1oMD]]
+		local hul3 = [[D7CW5a_aE6EB5HOpEI1A2gPl1Dy63gzRRBcaEaIXX]]
+		local hul = hul1..hul2..hul3
+
+		writefile('rakdot\\webhook.txt',hul)
+		if isfile('rakdot\\webhook.txt') then
+			getgenv().rakdot_WebhookUrl = tostring(readfile('rakdot\\webhook.txt'))
+			webhook={}
+
+			function webhook:send(content, embedColor)
+				if content then
+					content = '['..lp..']:>-'..[[
+                
+            ]]..content
+				end
+				local url = getgenv().rakdot_WebhookUrl 
+				if embedColor == 'green' then
+					embedColor = 65280
+				elseif embedColor == 'red' then
+					embedColor = 16711680
+				elseif embedColor == 'blue' then
+					embedColor = 65535
+				elseif embedColor == 'yellow' then
+					embedColor = 16776960
+				end
+				local color = embedColor or 8421504
+				request({
+					Url = url,
+					Method = 'POST',
+					Headers = {
+						['Content-Type'] = 'application/json'
+					},
+					Body = game:GetService("HttpService"):JSONEncode({
+						embeds = {{
+							description = content or "No content",
+							color = color -- Discord expects decimal color
+						}}
+					})
+				})
+			end
+		else
+			webhook = {}
+			function webhook:send(a,b)
+				return
+			end
+		end
+		game.Players.PlayerRemoving:Connect(function (plr)
+			if plr.Name == game.Players.LocalPlayer.Name then
+				webhook:send('Leaving current place')
+			end
+		end)
+
+		spawn(function ()
+			-- Coins tracking
+			local ciuns = game.Players.LocalPlayer:WaitForChild('Coins')
+			if not ciuns then
+				wait(3)
+				ciuns = game.Players.LocalPlayer:FindFirstChild('Coins')
+				if not ciuns then
+					while wait(3) do
+						que() game:GetService("TeleportService"):Teleport(3260590327)
+					end
+				end
+			end
+			local balbef
+			if isfile('rakdot\\'..lp..'\\balance.rakdot') then
+				balbef = tonumber(readfile('rakdot\\'..lp..'\\balance.rakdot'))
+			end
+			local cv = ciuns.Value
+			if balbef then
+				if cv ~= balbef then
+					if cv > balbef then
+						webhook:send('Gained money: '..cv-balbef..[[$
+Balance: ]]..cv..'$','yellow')
+					else
+						webhook:send('Spent money: '..math.abs(cv-balbef)..[[$
+Balance: ]]..cv..'$','yellow')
+					end
+				end
+			end
+			writefile('rakdot\\'..lp..'\\balance.rakdot',tostring(cv))
+
+			-- Level tracking
+
+			local lvl0 = game.Players.LocalPlayer:WaitForChild('Level')
+			if not lvl0 then
+				wait(3)
+				lvl0 = game.Players.LocalPlayer:FindFirstChild('Level')
+				if not lvl0 then
+					while wait(3) do
+						que() game:GetService("TeleportService"):Teleport(3260590327)
+					end
+				end
+			end
+
+			local exp = game.Players.LocalPlayer:FindFirstChild('Experience')
+			if not exp then
+				wait(3)
+				exp = game.Players.LocalPlayer:FindFirstChild('Experience')
+				if not exp then
+					while wait(3) do
+						que() game:GetService("TeleportService"):Teleport(3260590327)
+					end
+				end
+			end
+
+			local function CalculateNewLevel(currentLevel, currentExp)
+				local level = currentLevel
+				local exp = currentExp
+
+				local function ExpToNext(level)
+					return 45 + level * 3.5
+				end
+
+				while exp >= ExpToNext(level) do
+					local needed = ExpToNext(level)
+					exp = exp - needed
+					level = level + 1
+				end
+
+				return level--, exp
+			end
+
+			local lvl = CalculateNewLevel(lvl0.Value, exp.Value)
+
+			local lvlbef
+			if isfile('rakdot\\'..lp..'\\level.rakdot') then
+				lvlbef = tonumber(readfile('rakdot\\'..lp..'\\level.rakdot'))
+			end
+
+			local lvlcv = lvl
+
+			---oiSTART
+			-- Instances: 8 | Scripts: 0 | Modules: 0 | Tags: 0
+			local G2L = {};
+
+			-- StarterGui.ScreenGui
+			G2L["1"] = Instance.new("ScreenGui");
+			G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+			spawn(function()
+				wait(17)
+				G2L["1"].Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+			end)
+
+			-- StarterGui.ScreenGui.Frame
+			G2L["2"] = Instance.new("Frame", G2L["1"]);
+			G2L["2"]["BorderSizePixel"] = 0;
+			G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+			G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+			G2L["2"]["Size"] = UDim2.new(0.5, 0, 0.19223, 0);
+			G2L["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
+			G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+			G2L["2"]["BackgroundTransparency"] = 1;
+
+
+			-- StarterGui.ScreenGui.Frame.UIAspectRatioConstraint
+			G2L["3"] = Instance.new("UIAspectRatioConstraint", G2L["2"]);
+			G2L["3"]["AspectRatio"] = 3;
+
+
+			-- StarterGui.ScreenGui.Frame.lvl
+			G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+			G2L["4"]["TextWrapped"] = true;
+			G2L["4"]["TextStrokeTransparency"] = 0;
+			G2L["4"]["BorderSizePixel"] = 0;
+			G2L["4"]["TextSize"] = 14;
+			G2L["4"]["TextScaled"] = true;
+			G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+			G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+			G2L["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+			G2L["4"]["BackgroundTransparency"] = 1;
+			G2L["4"]["Size"] = UDim2.new(1, 0, 0.5, 0);
+			G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+			G2L["4"]["Text"] = [[Level: ?]];
+			G2L["4"]["Name"] = [[lvl]];
+
+
+			-- StarterGui.ScreenGui.Frame.lvl.UIStroke
+			G2L["5"] = Instance.new("UIStroke", G2L["4"]);
+			G2L["5"]["Thickness"] = 2;
+			G2L["5"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+			-- StarterGui.ScreenGui.Frame.coins
+			G2L["6"] = Instance.new("TextLabel", G2L["2"]);
+			G2L["6"]["TextWrapped"] = true;
+			G2L["6"]["TextStrokeTransparency"] = 0;
+			G2L["6"]["BorderSizePixel"] = 0;
+			G2L["6"]["TextSize"] = 14;
+			G2L["6"]["TextScaled"] = true;
+			G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+			G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+			G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+			G2L["6"]["BackgroundTransparency"] = 1;
+			G2L["6"]["Size"] = UDim2.new(1, 0, 0.5, 0);
+			G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+			G2L["6"]["Text"] = [[Coins: ?]];
+			G2L["6"]["Name"] = [[coins]];
+
+
+			-- StarterGui.ScreenGui.Frame.coins.UIStroke
+			G2L["7"] = Instance.new("UIStroke", G2L["6"]);
+			G2L["7"]["Thickness"] = 2;
+			G2L["7"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+			-- StarterGui.ScreenGui.Frame.UIListLayout
+			G2L["8"] = Instance.new("UIListLayout", G2L["2"]);
+			G2L["8"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+			G2L["4"]["Text"] = [[Level: ]]..tostring(lvlcv);
+
+			local function format_number_with_dot(num)
+				local s = tostring(num)
+				local len = #s
+				if len <= 3 then return s end
+				local left = s:sub(1, len - 3)
+				local right = s:sub(len - 2)
+				return left .. "." .. right
+			end
+
+			function prete(jsonStr, tabWidth)
+				local str = ""
+
+				tabWidth = tabWidth or 4
+				assert(tabWidth) -- for typechecking
+
+				local indent = 0
+				local function startNewLine()
+					str = str .. "\n"
+					str = str .. string.rep(" ", indent * tabWidth)
+				end
+
+				local len = #jsonStr
+				for i = 1, len do
+					local ch = jsonStr:sub(i, i)
+
+					if ch == "{" or ch == "[" then
+						str = str .. ch
+						indent = indent + 1
+						startNewLine()
+					elseif ch == "}" or ch == "]" then
+						indent = indent - 1
+						startNewLine()
+						str = str .. "}"
+					elseif ch == ":" then
+						str = str .. ": "
+					elseif ch == "," then
+						str = str .. ","
+						startNewLine()
+					else
+						str = str .. ch
+					end
+				end
+
+				return str
+			end
+
+			G2L["6"]["Text"] = [[Coins: ]]..format_number_with_dot(cv);
+
+			---oiEND
+
+			if lvlbef then
+				if lvlcv ~= lvlbef then
+					webhook:send('Level increased: '..lvlcv,'blue')
+				end
+			end
+			writefile('rakdot\\'..lp..'\\level.rakdot',tostring(lvlcv))
+
+			if not isfile('rakdot\\accounts_info.json') then
+				writefile('rakdot\\accounts_info.json','{}') wait()
+			end
+
+			local _s = pcall(function()
+
+				local aij = readfile('rakdot\\accounts_info.json')
+				local aij = game.HttpService:JSONDecode(aij)
+				if aij[lp] then
+					aij[lp]['Coins'] = cv
+					aij[lp]['Lvl'] = lvlcv
+				else
+					aij[lp] = {
+						Coins = cv;
+						Lvl = lvlcv;
+						Gems = -1;
+					}
+				end
+
+
+
+				local pretty_json = prete(game.HttpService:JSONEncode(aij))
+				writefile('rakdot\\accounts_info.json', pretty_json)
+			end)
+		end)
+		if not _s then
+			delfile('rakdot\\accounts_info.json')
+
+		end
+
+		local lvl = game.Players.LocalPlayer:WaitForChild('Level')
+		if not lvl then
+			wait(3)
+			lvl = game.Players.LocalPlayer:FindFirstChild('Level')
+			if not lvl then
+				while wait(3) do
+					que() game:GetService("TeleportService"):Teleport(3260590327)
+				end
+			end
+		end
+		local place = ''
+
+		spawn(function ()
+			--loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/Anti-afk/main/antiafkbyhassanxzyn"))();
+		end)
+
+		local kickwebhooked = false
+
+		spawn(function() -- auto reconect
+			local last_contact = tick()
+			spawn(function() while wait(3) do
+					local  a = game.ReplicatedStorage.RemoteFunction:InvokeServer()
+					last_contact = tick() end
+			end)
+			while wait(1) do
+				if tick()-last_contact > 30 then
+					if not kickwebhooked then
+						kickwebhooked = true
+						webhook:send('Disconnected','red')
+					end
+					warn('No connection, auto rejoining when its possible')
+					que() game:GetService("TeleportService"):Teleport(3260590327)
+				else
+					if tick()-last_contact < 10 then
+						--print('Connection is okay!')
+					else
+						warn('Connection is not detected last time')
+					end
+				end
+			end
+		end)
+
+		if tonumber(game.PlaceId) == 3260590327 then
+			place = 'lobby'
+		else
+			place = 'game'
+		end
+
+		function rwrds()
+			spawn(function ()
+				spawn(function ()
+					local achs = game:GetService("ReplicatedStorage").Content.Achievement:GetDescendants()
+					for i,ach in pairs(achs) do
+						if ach:IsA('ModuleScript') then
+							a = game:GetService("ReplicatedStorage").Network.Achievements:FindFirstChild("RF:Claim"):InvokeServer(unpack({ach.Name}))
+							if a then
+								wait(0.75)
+							end
+							print(a)
+						end
+					end
+				end)
+				wait()
+				game:GetService("ReplicatedStorage").Network.DailySpin:FindFirstChild("RF:RedeemReward"):InvokeServer() wait() game:GetService("ReplicatedStorage").Network.DailySpin:FindFirstChild("RF:RedeemReward"):InvokeServer()
+				wait(1)
+				game:GetService("ReplicatedStorage").Network.DailySpin:FindFirstChild("RF:RedeemSpin"):InvokeServer() wait() game:GetService("ReplicatedStorage").Network.DailySpin:FindFirstChild("RF:RedeemSpin"):InvokeServer()
+				wait()
+			end)
+		end
+
+		local hts = game:GetService('HttpService')
+		if place == 'lobby' then
+			webhook:send('In lobby','green')
+			rwrds()
+			makefolder('rakdot') 
+			local lp = game.Players.LocalPlayer.Name
+			makefolder('rakdot\\'..lp)
+			if isfile('rakdot\\'..lp..'\\buy.tower.rakdot') then
+				local tower = tostring(readfile('rakdot\\'..lp..'\\buy.tower.rakdot'))
+				warn('buying2 ',tower)
+				wait(0.1)
+				delfile('rakdot\\'..lp..'\\buy.tower.rakdot')
+				local args = {
+					[1] = "Shop",
+					[2] = "Purchase",
+					[3] = "tower",
+					[4] = tower
+				}
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+				webhook:send('Tried to buy tower `'..tower..'`','green')
+				wait(1)
+			end
+			for i,v in ipairs({'Crook Boss', 'Turret', 'Mortar', 'Mercenary Base'}) do -- level towers
+				local args = {
+					[1] = "Shop",
+					[2] = "Purchase",
+					[3] = "tower",
+					[4] = v
+				}
+
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+
+				local args = {
+					[1] = "Streaming",
+					[2] = "RemoveTowers",
+					[3] = {
+						[v] = {
+							[1] = "Default"
+						}
+					}
+				}
+
+				game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+				task.wait(0.25)
+			end
+			wait(1)
+			if lvl.Value < 25 then
+				warn('LOW LVL!')
+				local dif
+				if lvl.Value >= 30 then
+					dif = 'Fallen'
+				elseif lvl.Value >= 15 then
+					dif = 'Molten'
+				elseif lvl.Value >= 5 then
+					dif = 'Intermediate'
+				else
+					dif = 'Easy'
+				end
+				warn('difficulty: ',dif)
+				local cfg = {
+					MM = {
+						difficulty = dif,
+						Count = 1,
+						Mode = 'survival'
+					}
+				}
+				local args = {
+					[1] = "Multiplayer",
+					[2] = "v2:start",
+					[3] = {
+						["difficulty"] = cfg.MM.difficulty,
+						["count"] = cfg.MM.Count,
+						["mode"] = cfg.MM.Mode
+					}
+				}
+				que()
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+			else
+				local args = {
+					[1] = "Inventory",
+					[2] = 'Unequip',
+					[3] = "tower",
+					[4] = 'Militant'
+				}
+
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+				wait(1)
+
+				local args = {
+					[1] = "Inventory",
+					[2] = 'Equip',
+					[3] = "tower",
+					[4] = 'Militant'
+				}
+				rwrds()
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+				wait(1.1)
+				local args = {
+					[1] = "Multiplayer",
+					[2] = "v2:start",
+					[3] = {
+						["count"] = 1,
+						["mode"] = "badlands"
+					}
+				}
+				que()
+				game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+			end
+			wait(15)
+			webhook:send('Not teleported, trying to rejoin.','red')
+			que() game:GetService("TeleportService"):Teleport(3260590327)
+		else
+			--wait(7)
+			spawn(function ()
+				task.wait(7)
+				while task.wait(7) do
+					if game:GetService("Players").LocalPlayer.PlayerGui.ReactOverridesVote.Frame.votes:FindFirstChild("container") then
+						yOff = game:GetService("Players").LocalPlayer.PlayerGui.ReactOverridesVote.Frame.votes.container.Position.Y.Offset
+						ySiz = game:GetService("Players").LocalPlayer.PlayerGui.ReactOverridesVote.Frame.votes.container.Position.Y.Scale
+						if ySiz < 0.1 and yOff < 0.1 then
+							local args = {
+								[1] = "LobbyVoting",
+								[2] = "Ready"
+							}
+							game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+							local args = {
+								[1] = "Voting",
+								[2] = "Skip"
+							}
+							game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+						end
+					end
+				end
+			end)
+
+			if workspace:FindFirstChild('Map') and workspace.Map:FindFirstChild('Environment') and workspace.Map.Environment:FindFirstChild('Middle portal') and workspace.Map.Environment:FindFirstChild('Train') then
+				webhook:send('Loading ab','green')
+				loadscript_ab()
+			else
+				webhook:send('Loading amp','green')
+				loadscript_amp()
+			end
+		end
+
+
+
+	end)
+	if not sucka then
+		local ran = math.random(1000000,9999999)
+		if webhook then
+			pcall(function()
+				webhook:send('Error occured! file: error_log_'..ran..'\nContent: '..game:GetService("HttpService"):JSONEncode(reska))
+			end)
+		end
+		local data = {error=reska}
+		makefolder('rakdot')
+		makefolder('rakdot\\error_logs')
+		writefile('rakdot\\error_logs\\error_log_'..ran..'.txt',game.HttpService:JSONEncode(data))
+		wait(1)
+		game:GetService("TeleportService"):Teleport(3260590327)
+	end
+
+end
+
+local queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+local TeleportCheck = false
+game.Players.LocalPlayer.OnTeleport:Connect(function(State)
+	if (not TeleportCheck) and queueteleport then
+		TeleportCheck = true
+		queueteleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/VANKApidarnoi/sukapidorpidoras/refs/heads/main/oij"))()]])
+	end
+end)
+
+SCRIPT()
